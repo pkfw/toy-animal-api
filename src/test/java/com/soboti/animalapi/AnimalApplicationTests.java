@@ -1,10 +1,10 @@
-package com.soboti.animalreturnentokr;
+package com.soboti.animalapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AnimalReturnEnToKrApplicationTests {
+class AnimalApplicationTests {
 
     @Test
     void contextLoads() {

@@ -1,4 +1,4 @@
-package com.soboti.animalreturnentokr.web.controller;
+package com.soboti.animalapi.web.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-public class ReturnAnimalController {
+public class AnimalController {
 
     @GetMapping("/api/animal")
     public Map<String, Object> getAnimal(String en) {

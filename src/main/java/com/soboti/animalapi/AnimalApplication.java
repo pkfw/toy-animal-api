@@ -1,13 +1,13 @@
-package com.soboti.animalreturnentokr;
+package com.soboti.animalapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AnimalReturnEnToKrApplication {
+public class AnimalApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AnimalReturnEnToKrApplication.class, args);
+        SpringApplication.run(AnimalApplication.class, args);
     }
 
 }
