@@ -1,5 +1,6 @@
 package com.soboti.animalapi.controller;
 
+import com.soboti.animalapi.dto.AnimalMemberDto;
 import com.soboti.animalapi.service.AnimalMemberService;
 import com.soboti.animalapi.vo.AnimalMemberVo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +16,17 @@ public class AnimalController {
     @Autowired
     private AnimalMemberService animalMemberService;
 
-    @GetMapping("/api/animal")
-    public List<AnimalMemberVo> getAnimal(String en) {
-        List<AnimalMemberVo> animalMemberVoList = animalMemberService.selectAnimalMember();
-//        model.addAttribute("list", animalMemberVoList);
+    @GetMapping("/api/animal/all")
+    public List<AnimalMemberVo> getAnimal() {
+        List<AnimalMemberVo> animalMemberVoList = animalMemberService.selectAnimalMemberAll();
+        return animalMemberVoList;
+    }
+
+    @GetMapping("/api/animal/search")
+    public List<AnimalMemberVo> getAnimalSearch(String en) {
+        AnimalMemberDto animalMemberDto = new AnimalMemberDto();
+        animalMemberDto.setMember_en(en);
+        List<AnimalMemberVo> animalMemberVoList = animalMemberService.selectAnimalMemberSearch(animalMemberDto);
         return animalMemberVoList;
     }
 }

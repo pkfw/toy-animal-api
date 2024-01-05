@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.soboti.animalapi.mapper.AnimalMemberMapper">
-    <select id="selectAnimalMember" resultType="com.soboti.animalapi.vo.AnimalMemberVo">
+    <select id="selectAnimalMemberAll" resultType="com.soboti.animalapi.vo.AnimalMemberVo">
         SELECT *
         FROM animal_member
+    </select>
+    <select id="selectAnimalMemberSearch"
+            parameterType="com.soboti.animalapi.dto.AnimalMemberDto"
+            resultType="com.soboti.animalapi.vo.AnimalMemberVo">
+        SELECT *
+        FROM animal_member
+        <where>
+            <if test="member_en != null">
+                member_en = #{member_en}
+            </if>
+        </where>
     </select>
 </mapper>
